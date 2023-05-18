@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "spring-sample.fullname" . }}
+  name: {{ include "bibot.fullname" . }}
   labels:
-    {{- include "spring-sample.labels" . | nindent 4 }}
+    {{- include "bibot.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "spring-sample.selectorLabels" . | nindent 4 }}
+    {{- include "bibot.selectorLabels" . | nindent 4 }}
