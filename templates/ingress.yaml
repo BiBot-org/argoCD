@@ -15,7 +15,7 @@ apiVersion: extensions/v1beta1
 {{- end }}
 kind: Ingress
 metadata:
-  name: {{ $fullName }}
+  name: {{ $fullName | splitList "-" | first }}
   labels:
     {{- include "bibot.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
@@ -38,22 +38,22 @@ spec:
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
-    - host: {{ .host | quote }}
+    - host: {{ $fullName | splitList "-" | first | append .com | quote }}
       http:
         paths:
           {{- range .paths }}
-          - path: /{{ $fullName }}
+          - path: /
             {{- if and .pathType (semverCompare ">=1.18-0" $.Capabilities.KubeVersion.GitVersion) }}
             pathType: {{ .pathType }}
             {{- end }}
             backend:
               {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
               service:
-                name: {{ $fullName }}
+                name: {{ $fullName | splitList "-" | first }}
                 port:
                   number: {{ $svcPort }}
               {{- else }}
-              serviceName: {{ $fullName }}
+              serviceName: {{ $fullName | splitList "-" | first }}
               servicePort: {{ $svcPort }}
               {{- end }}
           {{- end }}
