@@ -47,7 +47,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: 
+    - host: {{ $fullName | splitList "-" | first | append ".com" }}
       paths: 
         - path: /
           pathType: Prefix
