@@ -50,7 +50,7 @@ ingress:
     - host: nginx.mysvc.com
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
