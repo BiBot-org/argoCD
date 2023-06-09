@@ -4,6 +4,9 @@ metadata:
   name: {{ include "bibot.fullname" . }}
   labels:
     {{- include "bibot.labels" . | nindent 4 }}
+  annotations:
+    vault.hashicorp.com/agent-inject: "true"
+    vault.hashicorp.com/role: "app"
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
