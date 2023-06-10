@@ -19,6 +19,8 @@ spec:
         {{- toYaml . | nindent 8 }}
         vault.hashicorp.com/agent-inject: "true"
         vault.hashicorp.com/role: "app"
+        vault.hashicorp.com/address: "http://34.22.82.97:8200"
+        vault.hashicorp.com/token: $VAULT_TOKEN
       {{- end }}
       labels:
         {{- include "bibot.selectorLabels" . | nindent 8 }}
