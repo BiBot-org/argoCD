@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/bibot-org/bibot-backend
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "209"
+  tag: "210"
 
 imagePullSecrets: []
 nameOverride: ""
