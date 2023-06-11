@@ -38,10 +38,6 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["/bin/sh"]
-          env:
-          - name: GOOGLE_APPLICATION_CREDENTIALS
-            value: cat /home/bibot_recipe/my-credentials.json
           ports:
             - name: http
               containerPort: 80
