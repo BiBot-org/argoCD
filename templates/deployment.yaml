@@ -41,7 +41,7 @@ spec:
           command: ["/bin/sh"]
           env:
           - name: GOOGLE_APPLICATION_CREDENTIALS
-            value: echo $HOME/my-credentials.json
+            value: cat /home/bibot_recipe/my-credentials.json
           ports:
             - name: http
               containerPort: 80
