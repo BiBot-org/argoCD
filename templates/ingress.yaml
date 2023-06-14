@@ -38,7 +38,7 @@ spec:
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
-    - host: {{- include "bibot.name" }}.bibot.store
+    - host: {{ include "bibot.name" . }}.bibot.store
       http:
         paths:
           {{- range .paths }}
@@ -54,7 +54,7 @@ spec:
                   number: {{ $svcPort }}
               {{- else }}
               serviceName: {{ $fullName }}
-              servicePort: {{ $svcPort }}
+              servicePort: {{ $svcPort }}`
               {{- end }}
           {{- end }}
     {{- end }}
