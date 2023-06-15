@@ -1,3 +1,5 @@
+[Argo CI/CD Template](https://github.com/BiBot-org/argoCD)
+|![Screenshot from 2023-06-12 14-36-28](https://github.com/BiBot-org/.github/assets/36991763/32a0e17d-2661-48be-9a60-a018b6d549d8)|
 ## 🖥 DevOps
 
 |Build|CI/CD|orchestration|Cloud|Metrix, Log Monitoring|
