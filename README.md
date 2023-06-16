@@ -3,7 +3,6 @@
     <img src="https://github.com/BiBot-org/.github/assets/36991763/c770cefd-4575-4d1c-907d-357cfdda7f58" width="150%" height="auto"/>
 </div>
 
-[Argo CI/CD Template](https://github.com/BiBot-org/argoCD)
 |![Screenshot from 2023-06-12 14-36-28](https://github.com/BiBot-org/.github/assets/36991763/32a0e17d-2661-48be-9a60-a018b6d549d8)|
 ## 🖥 DevOps
 
